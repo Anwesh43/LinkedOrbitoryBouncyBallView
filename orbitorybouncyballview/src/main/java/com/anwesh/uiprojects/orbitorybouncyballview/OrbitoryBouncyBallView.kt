@@ -54,3 +54,19 @@ fun Canvas.drawOBBNode(i : Int, scale : Float, paint : Paint) {
     drawOrbitoryBouncyBallView(scale, size, paint)
     restore()
 }
+
+class OrbitoryBouncyBallView(ctx : Context) : View(ctx) {
+
+    override fun onDraw(canvas : Canvas) {
+
+    }
+
+    override fun onTouchEvent(event : MotionEvent) : Boolean {
+        when (event.action) {
+            MotionEvent.ACTION_DOWN -> {
+
+            }
+        }
+        return true
+    }
+}

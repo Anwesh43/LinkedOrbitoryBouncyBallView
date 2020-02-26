@@ -183,4 +183,26 @@ class OrbitoryBouncyBallView(ctx : Context) : View(ctx) {
             curr.startUpdating(cb)
         }
     }
+
+    data class Renderer(var view : OrbitoryBouncyBallView) {
+
+        private val animator : Animator = Animator(view)
+        private val obb : OrbitoryBouncyBall = OrbitoryBouncyBall(0)
+
+        fun render(canvas : Canvas, paint : Paint) {
+            canvas.drawColor(backColor)
+            obb.draw(canvas, paint)
+            animator.animate {
+                obb.update {
+                    animator.stop()
+                }
+            }
+        }
+
+        fun handleTap() {
+            obb.startUpdating {
+                animator.start()
+            }
+        }
+    }
 }

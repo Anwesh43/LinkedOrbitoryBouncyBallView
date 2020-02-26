@@ -19,7 +19,7 @@ val sizeFactor : Float = 2.9f
 val foreColor : Int = Color.parseColor("#3F51B5")
 val backColor : Int = Color.parseColor("#BDBDBD")
 val delay : Long = 20
-val deg : Float = 30f
+val deg : Float = 90f
 val rFactor : Float = 5f
 
 fun Int.inverse() : Float = 1f / this
@@ -125,7 +125,7 @@ class OrbitoryBouncyBallView(ctx : Context) : View(ctx) {
         private var prev : OBBNode? = null
 
         init {
-
+            addNeighbor()
         }
 
         fun addNeighbor() {

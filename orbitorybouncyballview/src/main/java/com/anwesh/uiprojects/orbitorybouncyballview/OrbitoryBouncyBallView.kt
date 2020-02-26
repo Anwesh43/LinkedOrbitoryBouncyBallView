@@ -9,7 +9,6 @@ import android.view.MotionEvent
 import android.graphics.Paint
 import android.graphics.Canvas
 import android.graphics.Color
-import android.graphics.RectF
 import android.app.Activity
 import android.content.Context
 
@@ -206,6 +205,15 @@ class OrbitoryBouncyBallView(ctx : Context) : View(ctx) {
             obb.startUpdating {
                 animator.start()
             }
+        }
+    }
+
+    companion object {
+
+        fun create(activity : Activity) : OrbitoryBouncyBallView {
+            val view : OrbitoryBouncyBallView = OrbitoryBouncyBallView(activity)
+            activity.setContentView(view)
+            return view
         }
     }
 }
